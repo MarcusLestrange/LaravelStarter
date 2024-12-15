@@ -25,6 +25,13 @@ const vuetify = createVuetify({
     },
 })
 
+import Toast, { POSITION } from "vue-toastification";
+import "vue-toastification/dist/index.css";// Import the CSS or use your own!
+const ToastificationOptions = {
+    position: POSITION.TOP_RIGHT,
+    maxToasts: 5,
+    icon: true,
+}
 
 createInertiaApp({
     resolve: name => {
@@ -38,6 +45,7 @@ createInertiaApp({
             .use(plugin)
             .mixin({methods: {route: window.route}})
             .use(vuetify)
+            .use(Toast, ToastificationOptions)
             .mount(el)
     },
 })

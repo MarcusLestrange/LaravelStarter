@@ -76,9 +76,12 @@
 
 <script>
 import { router } from "@inertiajs/vue3";
+import {useToast} from "vue-toastification";
 
 export default {
-	props: {},
+	props: {
+		toastification: { type: Array },
+	},
 	data() {
 		return {
 			overlay: false,
@@ -86,20 +89,43 @@ export default {
 			items: [
 				{ text: 'Dashboard', url: route('dashboard.index'), icon: 'mdi-home' },
 			],
+			toast: useToast(),
 		};
 	},
 	mounted() {
+
+
 		router.on('start', (event) => {
 			console.log(`Starting a visit to ${event.detail.visit.url}`)
 			this.overlay = true
 		})
-		router.on('navigate', (event) => {
-			this.currentUrl = window.location.href
+		router.on('navigate', () => {
+			this.$nextTick(function () {
+				this.showToasts()
+			})
 		})
 		router.on('finish', (event) => {
 			console.log(`Finish a visit to ${event.detail.visit.url}`)
 			this.overlay = false
+			this.showToasts()
 		})
+
+	},
+	methods: {
+		showToasts() {
+			if(this.toastification) {
+				this.toastification.forEach(toastData => {
+					console.log( toastData )
+					switch (toastData.type) {
+						case 1: this.toast(toastData.text); break;
+						case 2: this.toast.success(toastData.text); break;
+						case 3: this.toast.info(toastData.text); break;
+						case 4: this.toast.warning(toastData.text); break;
+						case 5: this.toast.error(toastData.text); break;
+					}
+				})
+			}
+		},
 	},
 }
 </script>
