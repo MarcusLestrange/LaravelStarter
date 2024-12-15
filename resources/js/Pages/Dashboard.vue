@@ -1,5 +1,6 @@
 <template>
 	<p>Текущее время: {{ current_time }}</p>
+	<v-btn variant="outlined" prepend-icon="mdi-home" >Dashboboard</v-btn>
 </template>
 
 <script>
