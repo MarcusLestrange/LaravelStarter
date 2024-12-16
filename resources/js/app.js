@@ -26,7 +26,9 @@ const vuetify = createVuetify({
 })
 
 import Toast, { POSITION } from "vue-toastification";
-import "vue-toastification/dist/index.css";// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
+import {createPinia} from "pinia";
+// Import the CSS or use your own!
 const ToastificationOptions = {
     position: POSITION.TOP_RIGHT,
     maxToasts: 5,
@@ -46,6 +48,7 @@ createInertiaApp({
             .mixin({methods: {route: window.route}})
             .use(vuetify)
             .use(Toast, ToastificationOptions)
+            .use( createPinia() )
             .mount(el)
     },
 })

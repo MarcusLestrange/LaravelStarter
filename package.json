@@ -19,6 +19,7 @@
         "@inertiajs/vue3": "^2.0.0",
         "@mdi/font": "^7.4.47",
         "@vitejs/plugin-vue": "^5.2.1",
+        "pinia": "^2.3.0",
         "vue": "^3.5.13",
         "vue-toastification": "^2.0.0-rc.5",
         "vuetify": "^3.7.5"

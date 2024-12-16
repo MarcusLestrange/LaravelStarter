@@ -11,6 +11,7 @@
 - [tighten/ziggy - Laravel маршруты в JavaScript](https://github.com/tighten/ziggy)
 - @mdi/font - Material Design Icons
 - [Vue Toastification - лёгкие, простые и красивые уведомления](https://github.com/Maronato/vue-toastification)
+- [Pinia - Интуитивно понятное хранилище для Vue.js](https://pinia.vuejs.org/)
 
 ### Установка проекта на Linux
 ```bash
