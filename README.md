@@ -12,16 +12,26 @@
 - @mdi/font - Material Design Icons
 - [Vue Toastification - лёгкие, простые и красивые уведомления](https://github.com/Maronato/vue-toastification)
 
-
-## Установка проекта
+### Установка проекта на Linux
 ```bash
-git clone https://github.com/MarcusLestrange/LaravelStarter.git
+git clone https://github.com/MarcusLestrange/LaravelStarter.git && \
+cd LaravelStarter && \
+composer update && \
+cp .env.example .env && \
+npm install && \
+touch database/database.sqlite && \
+php artisan key:generate && \
+php artisan migrate:fresh
+```
 
-composer update
-npm install
-cp .env.example .env
-php artisan key:generate
+### Установка проекта на Windows
+```bash
+git clone https://github.com/MarcusLestrange/LaravelStarter.git & cd LaravelStarter & composer update & copy .env.example .env & npm install & type nul > database/database.sqlite & php artisan key:generate & php artisan migrate
+```
 
+
+### Запуск
+```bash
 php artisan serve
 npm run dev
 ```
