@@ -10,6 +10,7 @@
 ## Дополнительные зависимости
 - [tighten/ziggy - Laravel маршруты в JavaScript](https://github.com/tighten/ziggy)
 - @mdi/font - Material Design Icons
+- [Vue Toastification - лёгкие, простые и красивые уведомления](https://github.com/Maronato/vue-toastification)
 
 
 ## Установка проекта
