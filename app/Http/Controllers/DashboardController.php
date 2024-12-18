@@ -13,6 +13,7 @@ class DashboardController extends Controller
 	    toast(ToastTypesEnum::Success, 'DashboardController');
 		
 	    return Inertia::render('Dashboard', [
+		    'routeBack' => route('dashboard.index'),
 			'current_time' => now()->format('d.m.Y H:i:s'),
 	    ])->withSessionToasts();
     }

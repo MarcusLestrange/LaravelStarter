@@ -45,6 +45,7 @@
 		<v-app-bar density="compact" scroll-behavior="collapse" height="70" class="position-relative">
 			<template v-slot:prepend>
 				<div class="position-absolute d-flex left-0">
+					<v-btn v-if="routeBack" icon="mdi-arrow-left" @click="$inertia.get(routeBack)"/>
 					<v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
 				</div>
 			</template>
@@ -80,6 +81,7 @@ import {useToast} from "vue-toastification";
 
 export default {
 	props: {
+		routeBack: { type: String },
 		toastification: { type: Array },
 	},
 	data() {
